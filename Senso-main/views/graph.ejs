@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Senso</title>
+    <link rel="tree icon" type="image/png" href="tree.png"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto&display=swap');
+
+        body {
+            background-image: url(2846378.jpg);
+            height: 95vh;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-color: #193101;
+            font-family: 'Roboto', sans-serif;
+        }
+
+
+
+        .music {
+            margin: 40px;
+        }
+
+        .text {
+            margin-left: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .navbar {
+            background-color: #ECD68B;
+            box-shadow: 1px 1px 15px 10px #335A09;
+
+            margin-bottom: 10px;
+        }
+
+        .card {
+            opacity: 0.8;
+            /* color: transparent !important; */
+            margin-top: 10px;
+            border: 2px solid black;
+
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            /* Set the fixed height of the footer here */
+            line-height: 60px;
+            /* Vertically center the text there */
+            background-color: #f5f5f5;
+            margin-top: 20px;
+        }
+
+        audio {
+            border: none;
+            outline: none;
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+
+        @media only screen and (max-width: 1300px) {
+            audio {
+                width: 210px;
+                height: 54px;
+            }
+        }
+
+        @media only screen and (max-width: 991px) {
+            audio {
+                width: 250px;
+                height: 54px;
+            }
+        }
+
+
+
+
+        .footer-text {
+            font-weight: 900;
+            display: block;
+            text-align: center;
+        }
+
+        @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+
+
+
+        .animate {
+            background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, rgb(33, 117, 25), transparent, transparent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 3vw;
+
+            animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+        }
+
+        @keyframes reveal {
+            80% {
+                letter-spacing: 8px;
+            }
+
+            100% {
+                background-size: 300% 300%;
+            }
+        }
+
+        @keyframes glow {
+            40% {
+                text-shadow: 0 0 8px rgb(126, 194, 18);
+            }
+        }
+
+        .card-text {
+            margin: 0px 20px;
+            border-radius: 30px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 70px;
+            margin: auto;
+            background-color: white;
+        }
+
+        tr {
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .alert{
+                    display: none;
+                }
+
+                .image_center{
+                    display: block;
+                    margin: auto;
+                }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#">Senso</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="text text-center animate">Plots</h1>
+    <h2 class="text text-center animate">After Correlation we get <%=corrValue%></h2>
+    <div class="music">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 col-md-6">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sound1</h5>
+                        <p class="card-text text-center">Contains all the random noises in Time domain</p>
+                        <img class="image_center img-fluid" src="fig1.png" alt="plot1">
+                        <hr>
+                        <p class="text-center">We have taken a signal that has some random noise and it also has sound of chainsaw. This time domain plot shows us that signal, we are comparing all the sounds with this signal.</p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-6">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sound1</h5>
+                        <p class="card-text text-center">Contains all the random noises in Frequency domain</p>
+                        <img class="image_center img-fluid" src="fig2.png" alt="plot2">
+                        <hr>
+                        <p class="text-center">Here in this graph we have taken the same signal that has all the sounds and have applied fast fourier transform to this. This plot show same signal in frequency domain</p>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-6">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sound2</h5>
+                        <p class="card-text text-center">Contains plot of <%= userName %> in Time domain</p>
+                        <img class="image_center img-fluid" src="fig3.png" alt="plot3">
+                        <hr>
+                        <p class="text-center">This is the signal which you have choosen. We have plotted the time domain plot of selected signal.</p>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-6">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sound2</h5>
+                        <p class="card-text text-center">Contain plot of <%= userName %> in Frequency domain</p>
+                        <img class="image_center img-fluid" src="fig4.png" alt="plot4">
+                        <hr>
+                        <p class="text-center">Now we have plotted the frequency domain plot of your selected signal.</p>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-6">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">After correlating the above two signals</h5>
+                        <p class="card-text text-center">This graph shows the correlation plot between above two signals</p>
+                        <img class="image_center img-fluid" src="fig5.png" alt="plot5">
+                        <hr>
+                        <p class="text-center">Now as we have the frequency domain plots of the two signal, we apply correlation on these two signals. Correlation between signals
+                            gives the measure up to which the given signal resembles another signal. We try to compare the peak of signals in this plot.</p>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-6">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">After normalising the correlation</h5>
+                        <p class="card-text text-center">This value comes between 0 and 1</p>
+                        <img class="image_center img-fluid" src="fig6.png" alt="plot6">
+                        <hr>
+                        <p class="text-center">As the previous plot was different for different values here in this plot we try to normalise it. It gives us a final value between 0 and 1, this value on being multiplied by 100 gives us the percentage of similarity between these two signals.</p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-text">
+            <span class="text-muted">Made by Team Vibhav</span>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/050eb431-9035-4993-9072-73835382466a/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/sensoVibhav",
+    "appService.deploySubpath": "."
+}

@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Senso</title>
+    <link rel="tree icon" type="image/png" href="tree.png" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto&display=swap');
+
+        body {
+            background-image: url(2846378.jpg);
+            height: 95vh;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-color: #193101;
+            font-family: 'Roboto', sans-serif;
+        }
+
+
+
+        .music {
+            margin: 40px;
+        }
+
+        .text {
+            margin-left: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .navbar {
+            background-color: #ECD68B;
+            box-shadow: 1px 1px 15px 10px #335A09;
+
+            margin-bottom: 10px;
+
+        }
+
+        .card {
+            opacity: 0.8;
+            /* color: transparent !important; */
+            margin: 20 auto; 
+            border: 2px solid black;
+            float: none; /* Added */
+            margin-bottom: 20px;
+
+        }
+
+        .footer {
+            /* position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 60px; */
+            /* Set the fixed height of the footer here */
+            line-height: 60px;
+            /* Vertically center the text there */
+            background-color: #f5f5f5;
+            /* margin-top: 50px; */
+        }
+
+        audio {
+            border: none;
+            outline: none;
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+
+        @media only screen and (max-width: 1300px) {
+            audio {
+                width: 210px;
+                height: 54px;
+            }
+        }
+
+        @media only screen and (max-width: 991px) {
+            audio {
+                width: 250px;
+                height: 54px;
+            }
+        }
+
+
+
+
+        .footer-text {
+            font-weight: 900;
+            display: block;
+            text-align: center;
+        }
+
+        @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+
+
+
+
+
+        .animate {
+            background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, rgb(33, 117, 25), transparent, transparent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 3vw;
+
+            animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+        }
+
+        .animate1 {
+            color: rgb(255, 255, 255);
+            font-size: 80px;
+        }
+
+        @keyframes reveal {
+            80% {
+                letter-spacing: 8px;
+            }
+
+            100% {
+                background-size: 300% 300%;
+            }
+        }
+
+        @keyframes glow {
+            40% {
+                text-shadow: 0 0 8px rgb(126, 194, 18);
+            }
+        }
+
+        .card-text {
+            margin: 0px 20px;
+            border-radius: 30px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 70px;
+            margin: auto;
+            background-color: white;
+        }
+
+        tr {
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .alert {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#">Senso</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="text text-center animate">About This Project</h1>
+    <div class="card bg-light card-text">
+        <div class="card-body">
+
+
+            <p><strong>Deforestation</strong> is one of the most significant problems our generation faces across the
+                world. Deforestation is directly linked to climate change as burning down organic material releases a
+                lot of
+                carbon dioxide, a greenhouse gas. Forests are cut down throughout the world to make space for
+                agricultural
+                fields and housing. Intentional fires are put to clear out the forest and illegal logging happens on an
+                international scale.
+                Thus to encounter this problem we have come with a project named Senso, Senso is a project based on
+                Digital
+                Signal Processing, Our project aims to acumulate sound from the surrounding and check if it matches with
+                the
+                already availabe dataset of chainsaw or any other electronic equipment with which cutting of tree takes
+                place.</p>
+        </div>
+    </div>
+
+    <h2 class="text text-center animate">How it is working</h2>
+    <div class="card bg-light card-text">
+        <div class="card-body">
+
+
+            <p>Every sound has some frequency component. This frequency component can be used to find similarities
+                between sounds. The main concept of this project was to detect the frequency of chainsaw that is used
+                for
+                illegal logging of trees. Here we take two audio signal and correlate them, Correlation between signals
+                gives the measure up to which the given signal resembles another signal. In other words, if we want to
+                know
+                how much similarity exists between the signals 1 and 2, then we need to find out the correlation of
+                Signal 1 with respect to Signal 2 or vice versa. Here in this project we have taken some sound of
+                chainsaw, birds and other noises that can come form forest and have combined them as a singal signal.
+                After that we take another random signal and compare these signals. While comparing these signals we
+                apply fast fourier transform on these signal, as signals are compared in frequency domain. After taking
+                out the fast fourier transform of these signals we correlate them and after correlation the corrlation
+                coffecient gives us a value between 0 and 1. If the value is more close to one then it means it has
+                component of chainsaw more and vice versa. Below a few samples are given of some sounds which you can
+                correlate with the main signal which has component of chainsaw more than other sounds and find the
+                correlation along with frequency and time plots.</p>
+        </div>
+    </div>
+
+    <h1 class="text text-center animate1">Sample Sounds</h1>
+    <div class="music">
+        <div class="row">
+            <div class="col-sm-12 col-lg-3 col-md-6">
+                <div class="card bg-warning">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sound1</h5>
+                        <p class="card-text text-center">Contains sound of chainsaw</p>
+                        <audio controls autoplay>
+                            <source src="Chainsaw2.wav" type="audio/wav">
+                        </audio>
+                        <form action="/" method="POST">
+                            <input type="hidden" name="song" value="Chainsaw2.wav">
+                            <button id="chainsaw" type="submit"
+                                class="btn btn-success d-block mx-auto mt-2">Correlate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-3 col-md-6">
+                <div class="card bg-warning">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sound2</h5>
+                        <p class="card-text text-center">Contains sound of Bird</p>
+                        <audio controls autoplay>
+                            <source src="bird.wav" type="audio/wav">
+                        </audio>
+                        <form action="/" method="POST">
+                            <input type="hidden" name="song" value="bird.wav">
+                            <button type="submit" id="btnShow"
+                                class="btn btn-success d-block mx-auto mt-2">Correlate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-3 col-md-6">
+                <div class="card bg-warning">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sound3</h5>
+                        <p class="card-text text-center">Contains sound of Dog</p>
+                        <audio controls autoplay>
+                            <source src="Dog.wav" type="audio/wav">
+                        </audio>
+                        <form action="/" method="POST">
+                            <input type="hidden" name="song" value="Dog.wav">
+                            <button type="submit" class="btn btn-success d-block mx-auto mt-2">Correlate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-3 col-md-6">
+                <div class="card bg-warning">
+                    <div class="card-body ">
+                        <h5 class="card-title text-center">Sound4</h5>
+                        <p class="card-text text-center">Contains sound of Camp Fire</p>
+                        <audio controls autoplay>
+                            <source src="campfire.wav" type="audio/wav">
+                        </audio>
+                        <form action="/" method="POST">
+                            <input type="hidden" name="song" value="campfire.wav">
+                            <button type="submit" class="btn btn-success d-block mx-auto mt-2">Correlate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-3 col-md-6">
+                <div class="card bg-warning">
+                    <div class="card-body ">
+                        <h5 class="card-title text-center">Sound5</h5>
+                        <p class="card-text text-center">Contains sound of Rooster</p>
+                        <audio controls autoplay>
+                            <source src="Rooster.wav" type="audio/wav">
+                        </audio>
+                        <form action="/" method="POST">
+                            <input type="hidden" name="song" value="Rooster.wav">
+                            <button type="submit" class="btn btn-success d-block mx-auto mt-2">Correlate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-3 col-md-6">
+                <div class="card bg-warning">
+                    <div class="card-body ">
+                        <h5 class="card-title text-center">Sound6</h5>
+                        <p class="card-text text-center">Contains sound of Rain</p>
+                        <audio controls autoplay>
+                            <source src="rain.wav" type="audio/wav">
+                        </audio>
+                        <form action="/" method="POST">
+                            <input type="hidden" name="song" value="rain.wav">
+                            <button type="submit" class="btn btn-success d-block mx-auto mt-2">Correlate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-3 col-md-6">
+                <div class="card bg-warning">
+                    <div class="card-body ">
+                        <h5 class="card-title text-center">Sound7</h5>
+                        <p class="card-text text-center">Contains sound Electricity</p>
+                        <audio controls autoplay>
+                            <source src="electric_noise.wav" type="audio/wav">
+                        </audio>
+                        <form action="/" method="POST">
+                            <input type="hidden" name="song" value="electric_noise.wav">
+                            <button type="submit" class="btn btn-success d-block mx-auto mt-2">Correlate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-3 col-md-6">
+                <div class="card bg-warning">
+                    <div class="card-body ">
+                        <h5 class="card-title text-center">Sound8</h5>
+                        <p class="card-text text-center">Contains sound of Chainsaw2</p>
+                        <audio controls autoplay>
+                            <source src="Chainsaw1.wav" type="audio/wav">
+                        </audio>
+                        <form action="/" method="POST">
+                            <input type="hidden" name="song" value="Chainsaw1.wav">
+                            <button type="submit" class="btn btn-success d-block mx-auto mt-2">Correlate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 col-md-12 mx-auto">
+                <div class="card bg-warning">
+                    <div class="card-body ">
+                        <h5 class="card-title text-center">Upload your audio file</h5>
+                        <p class="card-text text-center">Format should be .wav</p>
+                        <!-- <form action="/upload" method="POST" enctype="multipart/form-data">
+                            <input type="file" name="file">
+                            <button type="submit" class="btn btn-success d-block mx-auto mt-2">Upload</button>
+                        </form> -->
+                        <form action="/upload" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" class="form-control" id="customFile" name="file"/>
+                                <button type="submit" class="btn btn-success d-block mx-auto mt-2">Upload</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <span class="text-muted">Made by Team Vibhav</span>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
