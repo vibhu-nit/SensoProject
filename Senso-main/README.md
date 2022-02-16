@@ -9,5 +9,5 @@
 * We have provided some sounds on our website that we think can come from forest and you can check corrlation of those sounds with the original sound of chainsaw.
 * After getting the value we can use it to determine if the sound we are having has a component of chansaw or not. If the value is close to 1 then it means it has frequency of chainsaw.
 * We have set a threashold that is 0.8, if the corrlation value is above it we will notify the forest official about the place and can send them a detailed report of the graphs of time domain and frequency domain as evidence of the logging.
-* Website link: https://calm-tor-31753.herokuapp.com
+* Website link: https://senso-vibhav.herokuapp.com/
 
